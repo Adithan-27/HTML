@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert1</title>
+    <script>
+        function msg(){
+            x=parseInt(tb1.value)
+            alert(x+" Good Morning")
+        }
+
+        function simple(){
+            a=parseInt(f1.pr.value)
+            b=parseInt(f1.rt.value)
+            c=parseInt(f1.ti.value)
+            x=((a * b * c) / 100)
+            document.getElementById('in').value=x;
+        }
+
+        function compound(){
+            x = a*(1+(b/100))^c
+            document.getElementById('in').value=x;
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="tb1">
+<button type="button" onclick="msg()">Compund Interest</button>  
+Principle: <input type="text" id="pr"><br><br>
+Rate: <input type="text" id="rt"><br><br>
+Time (years): <input type="text" id="ti"><br><br>
+<button type="button" onlclick="simple()">Simple Interest</button>
+<button type="button" onlclick="compound()">Compound Interest</button><br><br>
+Interest: <input type="text" id="in">
+</body>
+</html>

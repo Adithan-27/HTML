@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest - Radio Button</title>
+    <script>
+        function simple() {
+            x = parseInt(tb1.value);
+            y = parseInt(tb2.value);
+            z = parseInt(tb3.value); 
+            a = ((x*y*z)/100);
+            document.getElementById("p1").innerHTML="Simple Interest: "+a;
+        }
+
+        function compound() {
+            b = ((x*(1+(y/100)))^z);
+            document.getElementById("p1").innerHTML="Compound Interest: "+b;
+        }
+    </script>
+</head>
+<body>
+    Principle: <input type="text" id="tb1"><br>
+    Rate: <input type="text" id="tb2"><br>
+    Time (years): <input type="text" id="tb3"><br><br>
+    <form name="interest" method="post" name="buttons" id="interest" onsubmit="return false">
+
+        <li><div class="question">What type of interest would you like to calculate?</div></li>
+        <input id="choice" type="radio" name="group1" value="simple" onclick="simple()">Simple Interest<br>
+        <input id="choice" type="radio" name="group1" value="compound" onclick="compound()">Compound Interest<br><br>
+
+        <input type="button" value="RELOAD" onclick="location.reload();">
+
+    </form>
+    <p id="p1"></p>
+</body>
+</html>

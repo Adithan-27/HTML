@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function handleClick()
+          {         
+        var amountCorrect = 0;          
+        for(var i = 1; i <= 45; i++) {
+          var radios = document.getElementsByName('group'+i);
+          for(var j = 0; j < radios.length; j++) {
+            var radio = radios[j];
+            if(radio.value == "correct" && radio.checked) {
+              amountCorrect++;
+            }
+          }
+         }
+        
+            if(amountCorrect == 0){
+             alert("0/5 => meet admin");
+            } else if(amountCorrect == 1){
+                alert("1/5 => fair, will have to attend 20 marks test to reach your advanced level");
+            } else if(amountCorrect == 2){
+                alert("2/5 => very fair, will have to attend 15 marks test to reach your advanced level");
+            } else if(amountCorrect == 3){
+                alert("3/5 => better,  will have to attend 10 marks test to reach your advanced level");
+            } else if(amountCorrect == 4){
+                alert("4/5 => good, need to write  test again to reach your advanced level");
+            } else if(amountCorrect == 5){
+                alert("5/5 => very good, you are good to apply the advanced level");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="quiz" method="post" name="buttons" id="quiz" onsubmit="return false">
+
+        <li><div class="question">What is the capital of India?</div></li>
+        <input id="answer" type="radio" name="group1" value="wrong">Chennai<br>
+        <input id="answer" type="radio" name="group1" value="wrong">Bangalore<br>
+        <input id="answer" type="radio" name="group1" value="correct">New Delhi<br>
+        <input id="answer" type="radio" name="group1" value="wrong">Mumbai<hr>
+
+        <li><div class="question">What is the capital of China?</div></li>
+        <input id="answer" type="radio" name="group2" value="wrong">Shanghai<br>
+        <input id="answer" type="radio" name="group2" value="correct">Beijing<br>
+        <input id="answer" type="radio" name="group2" value="wrong">Wuhan<br>
+        <input id="answer" type="radio" name="group2" value="wrong">Guangzhou<hr>
+
+        <li><div class="question">What is the captial of the United States?</div></li>
+        <input id="answer" type="radio" name="group3" value="wrong">San Francisco<br>
+        <input id="answer" type="radio" name="group3" value="wrong">New York City<br>
+        <input id="answer" type="radio" name="group3" value="correct">Washington DC<br>
+        <input id="answer" type="radio" name="group3" value="wrong">Chicago<hr>
+
+        <li><div class="question">What is the capital of Spain?</div></li>
+        <input id="answer" type="radio" name="group4" value="correct">Madrid<br>
+        <input id="answer" type="radio" name="group4" value="wrong">Barcelona<br>
+        <input id="answer" type="radio" name="group4" value="wrong">Seville<br>
+        <input id="answer" type="radio" name="group4" value="wrong">Granada<hr>
+
+        <li><div class="question">Waht is the capital of England?</div></li>
+        <input id="answer" type="radio" name="group5" value="wrong">Manchester<br>
+        <input id="answer" type="radio" name="group5" value="wrong">Leeds<br>
+        <input id="answer" type="radio" name="group5" value="wrong">Birmingham<br>
+        <input id="answer" type="radio" name="group5" value="correct">London<hr>
+
+        <button class="submit" onclick="return handleClick();" type="submit">Submit</button>
+        
+        </form> 
+</body>
+</html>

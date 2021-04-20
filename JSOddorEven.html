@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+    <script>
+        function calculate() {
+            x = parseInt(tb1.value);
+            if ((x%2)==0) {
+                alert(x+" is even!");
+                document.getElementById('tb2').value=x+" is even!";
+                document.getElementById('tb2').style.color='green';
+            }
+            else {
+                alert(x+" is odd!");
+                document.getElementById('tb2').value=x+" is odd!";
+                document.getElementById('tb2').style.color='red';
+            }
+        }
+    </script>
+</head>
+<body>
+    Enter the number: <input type="text" id="tb1"><br>
+    <button type="button" id="Calculate" onclick="calculate()">Calculate</button><br>
+    <input type="text" id="tb2">
+</body>
+</html>

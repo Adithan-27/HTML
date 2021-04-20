@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function a() {
+                p = parseFloat(f1.t1.value);
+                r = parseInt(f1.t2.value);
+                y = parseInt(f1.t3.value);
+                si = (p * r * y) / 100;
+                document.getElementById('t4').value = si;
+                }
+
+        function b() {
+            ci = p* (Math.pow((1 + r / 100),y));
+            document.getElementById('t5').value = ci;
+             }
+    </script>
+</head>
+<body>
+<form id="f1">
+    Principle : <input type="text" id="t1"/><br>
+    Rate: <input type="text" id="t2"/><br>
+    Time (years): <input type="text" id="t3"/><br><br>
+    <button type="button" onclick="a()">Simple Interest</button>
+    <input type="text" id="t4"/><br><br>
+    <button type="button" onclick="b()">Compund Interest</button>
+    <input type="text" id="t5"/><br>
+</form>    
+</body>
+</html>
